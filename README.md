@@ -21,10 +21,3 @@ while the window is open. Default is `false` (in-game window).
 
 By default the **Tips** button becomes the MODS button (`ButtonToReplace = tips`). Quit is not touched.
 Set `ReplaceExistingButton = false` to add a separate button instead.
-
-## If the button lands in the wrong place (or nowhere)
-
-The scene layout wasn't available, so the menu is auto-detected: the largest group of the game's
-`CustomButton`s. Press **F9** and look in `BepInEx\LogOutput.log` for the `[dump]` list, then put the
-right path into `BepInEx\config\local.screenstocks.modmanager.cfg` -> `TargetParentPath`.
-If nothing is found after 20 s a small floating MODS button appears top-right (configurable).
