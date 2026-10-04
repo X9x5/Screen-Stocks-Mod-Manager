@@ -1,23 +1,21 @@
-## Use
+# Screen Stocks Mod Manager
+A BepInEx plugin that adds a **mod manager** to Screen Stocks. See your installed mods and edit their settings without leaving the game.
 
-- Put the dll in BepInEx/Plugins in Screen Stocks
-- Open the game menu and click **MODS**, or press **F10** anywhere.
-- Left: installed mods. Right: that mod's settings, grouped by section.
-  - bool = ON/OFF button, enums and "acceptable value" lists = `< value >` cycler,
-    everything else = text box (same format as the .cfg file; Enter or click away to apply).
-  - **Reset** per setting, **Reset all**, **Reload from disk**.
-  - **Disable/Enable (needs restart)** renames the DLL to `.dll.disabled` and back.
-  - "Show other DLLs" lists plugin-folder DLLs that aren't loaded plugins (libraries, disabled files).
-- Edits save to the mod's .cfg immediately. Mods that listen for `SettingChanged` react at once; others read config at startup.
+-# Unofficial fan-made mod, not affiliated with the Screen Stocks devs. It only edits BepInEx config files. It does not touch your save, trades, money or online data.
 
-## Separate window
+## What you can do
+- Click the **MODS** button (it replaces the **Tips** `?` button) or press **F10** to open it
+- See every installed mod: name, version, GUID and file
+- Edit any mod's settings: on/off toggles, pick-lists, and text boxes
+- Reset a setting, reset a whole mod, or reload its config from disk
+- Disable or enable a mod (takes effect on the next game start)
+- Open it inside the game, or as its own separate window (the window closes with the game)
+- Changes save to the mod's `.cfg` right away
 
-In `BepInEx\config\local.screenstocks.modmanager.cfg` set `OpenInSeparateWindow = true` (section `[Window]`).
-The MODS button / F10 then opens the Mod Manager as its own Windows window (`ScreenStocksModManagerWindow.exe`,
-installed into `BepInEx\ModManagerWindow` by build.bat). It edits the .cfg files directly and the game reloads them live
-while the window is open. Default is `false` (in-game window).
+## Install
+1. Install **BepInEx 5.4.x** (Windows x64) in the game folder and run the game once
+2. Put `ScreenStocksModManager.dll` in `BepInEx/plugins`
+3. Optional, for the separate window: put the `ModManagerWindow` folder in `BepInEx/`, then set `OpenInSeparateWindow = true` in `BepInEx/config/local.screenstocks.modmanager.cfg`
+4. Start the game
 
-## Which button is replaced
-
-By default the **Tips** button becomes the MODS button (`ButtonToReplace = tips`).
-Set `ReplaceExistingButton = false` to add a separate button instead.
+**Needs:** Windows 64-bit, BepInEx 5.4.x
