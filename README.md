@@ -19,5 +19,5 @@ while the window is open. Default is `false` (in-game window).
 
 ## Which button is replaced
 
-By default the **Tips** button becomes the MODS button (`ButtonToReplace = tips`). Quit is not touched.
+By default the **Tips** button becomes the MODS button (`ButtonToReplace = tips`).
 Set `ReplaceExistingButton = false` to add a separate button instead.
